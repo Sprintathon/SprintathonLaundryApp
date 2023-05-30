@@ -1,6 +1,8 @@
-﻿using CommunityToolkit.Maui;
-using Microsoft.Extensions.Logging;
-
+﻿global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Maui;
+global using Microsoft.Extensions.Logging;
+global using SprintathonLaundryApp.ViewModels;
+global using SprintathonLaundryApp.Views;
 namespace SprintathonLaundryApp;
 
 public static class MauiProgram
