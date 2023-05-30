@@ -1,4 +1,6 @@
-﻿namespace SprintathonLaundryApp.ViewModels
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace SprintathonLaundryApp.ViewModels
 {
     public partial class BaseViewModel : ObservableObject
     {

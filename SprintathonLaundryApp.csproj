@@ -59,6 +59,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Views\EnterOtp.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\ForgotPassword.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\LogInView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
