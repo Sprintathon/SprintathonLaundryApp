@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using SprintathonLaundryApp.Views;
 
 namespace SprintathonLaundryApp.ViewModels
 {
@@ -9,7 +10,7 @@ namespace SprintathonLaundryApp.ViewModels
         public async void NavigateToLogIn()
         {
             IsBusy = true;
-            await Task.Delay(4000);
+            await Task.Delay(2000);
             await Shell.Current.GoToAsync(nameof(LogInView));
             IsBusy = false;
         }

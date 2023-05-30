@@ -9,5 +9,8 @@ public partial class AppShell : Shell
 		InitializeComponent();
 		Routing.RegisterRoute(nameof(LogInView), typeof(LogInView));
 		Routing.RegisterRoute(nameof(SignUp), typeof(SignUp));
+		Routing.RegisterRoute(nameof(ForgotPassword), typeof(ForgotPassword));
+		Routing.RegisterRoute(nameof(EnterOtp), typeof(EnterOtp));
+
     }
 }

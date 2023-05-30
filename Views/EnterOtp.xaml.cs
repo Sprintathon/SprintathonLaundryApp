@@ -2,11 +2,11 @@ using SprintathonLaundryApp.ViewModels;
 
 namespace SprintathonLaundryApp.Views;
 
-public partial class LogInView : ContentPage
+public partial class EnterOtp : ContentPage
 {
-	public LogInView()
+	public EnterOtp()
 	{
 		InitializeComponent();
-        BindingContext = new LogInViewModel();
+		BindingContext = new EnterOtpViewModel();
     }
 }

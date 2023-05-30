@@ -12,6 +12,13 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <Button Text="Sign up"
+                
+                IsEnabled="{Binding IsNotBusy}"
                 Command="{Binding  NavigateToSignUpCommand}"/>
+        
+        <Button Text="Forgot Password?"
+                
+                IsEnabled="{Binding IsNotBusy}"
+                Command="{Binding  NavigateToForgotPasswordCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SprintathonLaundryApp.Views.SignUp"
+             x:Class="SprintathonLaundryApp.Views.EnterOtp"
              xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
-             x:DataType="viewmodel:SignUpViewModel"
-             Title="SignUp">
+             x:DataType="viewmodel:EnterOtpViewModel"
+             Title="EnterOtp">
     <VerticalStackLayout>
         <Label 
-            Text="Sign Up"
+            Text="Enter Otp"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Button 
+            Text="Enter New Password"
+            Command="{Binding NavigateToNewPassswordCommand}"/>
     </VerticalStackLayout>
 </ContentPage>
