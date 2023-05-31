@@ -14,10 +14,41 @@
 
 
             <Label
-                HorizontalOptions="Center"
-                Text="Enter Otp"
+                Margin="10"
+                FontAttributes="Bold"
+                FontSize="Body"
+                HorizontalOptions="Start"
+                Text="Enter OTP"
                 VerticalOptions="Center" />
-            <Button Command="{Binding NavigateToNewPassswordCommand}" Text="Enter New Password" />
+            <Frame
+                Margin="10"
+                Padding="1"
+                BorderColor="White"
+                CornerRadius="10">
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+                    <Image
+                        HeightRequest="25"
+                        HorizontalOptions="Start"
+                        Source="otp.png"
+                        VerticalOptions="Center"
+                        WidthRequest="25" />
+                    <Entry
+                        Grid.Column="1"
+                        HeightRequest="50"
+                        HorizontalOptions="FillAndExpand"
+                        Placeholder="One time password"
+                        VerticalOptions="Center" />
+                </Grid>
+            </Frame>
+            <Button
+                Margin="10"
+                Command="{Binding NavigateToNewPassswordCommand}"
+                Text="Enter New Password" />
 
         </VerticalStackLayout>
 
