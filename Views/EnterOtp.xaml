@@ -8,7 +8,7 @@
     x:DataType="viewmodel:EnterOtpViewModel">
     <Grid RowDefinitions="Auto,Auto,Auto">
 
-        <Image Grid.Row="0" Source="forgot_password.png" />
+        <Image Grid.Row="0" Source="enter_otp.png" />
 
         <VerticalStackLayout Grid.Row="1">
 
