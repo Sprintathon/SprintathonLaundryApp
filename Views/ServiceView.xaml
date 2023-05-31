@@ -7,13 +7,14 @@
     xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
     Title="Service"
     x:DataType="viewmodel:ServiceViewModel">
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to services"
-            VerticalOptions="Center" />
+    <ScrollView>
 
-        <ScrollView>
+        <VerticalStackLayout>
+            <Label
+                HorizontalOptions="Center"
+                Text="Welcome to services"
+                VerticalOptions="Center" />
+
 
             <CollectionView>
                 <CollectionView.ItemsSource>
@@ -47,34 +48,46 @@
                 </CollectionView.ItemsSource>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Services">
-                        <VerticalStackLayout Padding="10" Text="Hand Washing">
-                            <Image
+
+                        <Grid
+                            Padding="10"
+                            RowDefinitions="*"
+                            RowSpacing="0">
+
+
+
+                            <ImageButton
+                                Grid.Row="0"
                                 Aspect="AspectFill"
-                                HeightRequest="25"
-                                HorizontalOptions="Start"
+                                Clicked="OnServiceImagClicked"
+                                HeightRequest="300"
+                                HorizontalOptions="Center"
                                 Source="{Binding Image}"
-                                VerticalOptions="Center"
-                                WidthRequest="25" />
+                                VerticalOptions="Center" />
                             <Label
+                                Grid.Row="0"
                                 HorizontalOptions="Center"
                                 Text="{Binding Name}"
                                 VerticalOptions="Center" />
                             <Label
+                                Grid.Row="0"
                                 HorizontalOptions="Center"
                                 Text="{Binding Description}"
                                 VerticalOptions="Center" />
                             <Label
+                                Grid.Row="0"
                                 HorizontalOptions="Center"
                                 Text="{Binding Price}"
                                 VerticalOptions="Center" />
 
-                        </VerticalStackLayout>
+                        </Grid>
+
+
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </ScrollView>
-        <Button Command="{Binding NavigateToServiceOptionsCommand}" Text="Hand Washing" />
 
 
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

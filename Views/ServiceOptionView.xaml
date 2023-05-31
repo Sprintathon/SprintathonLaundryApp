@@ -8,14 +8,16 @@
     Title="ServiceOptionView"
     x:DataType="viewmodel:ServiceOptionsViewModel"
     Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout>
 
-    <VerticalStackLayout>
-        <Label
-            HorizontalOptions="Center"
-            Text="Welcome to services"
-            VerticalOptions="Center" />
 
-        <ScrollView>
+            <Label
+                HorizontalOptions="Center"
+                Text="Welcome to services"
+                VerticalOptions="Center" />
+
+
 
             <CollectionView>
                 <CollectionView.ItemsSource>
@@ -31,6 +33,7 @@
                             Location="Kitwe Town" />
 
 
+
                     </x:Array>
                 </CollectionView.ItemsSource>
                 <CollectionView.ItemTemplate>
@@ -43,34 +46,34 @@
                                 Source="hand_wash.png"
                                 VerticalOptions="Center"
                                 WidthRequest="100" />
-                            <VerticalStackLayout>
+                            <VerticalStackLayout Padding="10">
                                 <Label
-                                    HorizontalOptions="Center"
+                                    HorizontalOptions="Start"
                                     Text="{Binding Name}"
                                     VerticalOptions="Center" />
                                 <Label
-                                    HorizontalOptions="Center"
+                                    HorizontalOptions="Start"
                                     Text="{Binding Location}"
                                     VerticalOptions="Center" />
                             </VerticalStackLayout>
                             <Label
+                                Padding="20"
+                                FontSize="Large"
                                 HorizontalOptions="Center"
                                 Text="4.6"
                                 VerticalOptions="Center" />
                             <Image
                                 Aspect="AspectFill"
-                                HeightRequest="25"
-                                HorizontalOptions="Start"
+                                HeightRequest="50"
+                                HorizontalOptions="Center"
                                 Source="star.png"
                                 VerticalOptions="Center"
-                                WidthRequest="25" />
+                                WidthRequest="50" />
 
                         </HorizontalStackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </ScrollView>
-
-
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
