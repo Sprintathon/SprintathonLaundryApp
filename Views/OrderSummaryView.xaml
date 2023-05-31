@@ -4,7 +4,7 @@
              x:Class="SprintathonLaundryApp.Views.OrderSummaryView"
              xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
              x:DataType="viewmodel:OrderSummaryViewModel"
-             Title="OrderSummaryView">
+             Title="Order">
     <VerticalStackLayout>
         <Label 
             Text="Welcome to Order Summary"

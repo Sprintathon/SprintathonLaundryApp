@@ -6,21 +6,21 @@
     <ScrollView
         Orientation="Vertical">
 
-        <VerticalStackLayout>
-            <Grid Padding="20">
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <Grid Padding="0,20,0,0" ColumnDefinitions="*,auto">
                 <VerticalStackLayout>
-                    <Label Text="Pressed Clothing" FontSize="25"/>
-                    <Label Text="Your cloths will be pressed and 20% will be added to your cost" FontSize="12"/>
+                    <Label Text="Pressed Clothing" FontSize="20"/>
+                    <Label Text="Your cloths will be pressed and 20% will be added to your cost" FontSize="10"/>
                 </VerticalStackLayout>
-                <Switch IsToggled="true"/>
+                <Switch IsToggled="true" Grid.Column="1"/>
             </Grid>
             
-            <Grid Padding="20" ColumnDefinitions="Auto,*">
+            <Grid
+                ColumnDefinitions="*,auto">
                 <VerticalStackLayout>
-                    <Label Text="Default Pickup Location" FontSize="25"/>
-                    
+                    <Label Text="Default Pickup Location" FontSize="20"/>
                 </VerticalStackLayout>
-                <Picker Grid.Column="1" Title="Select" FontSize="18" HorizontalTextAlignment="End">
+                <Picker Grid.Column="1" Title="Select" FontSize="18" HorizontalTextAlignment="Center">
                 <Picker.Items>
                 <x:String>In person</x:String>
                 <x:String>Delivered</x:String>
@@ -29,34 +29,38 @@
             
             </Grid>
             
-            <Grid Padding="20">
+            <Grid
+                ColumnDefinitions="*,auto">
                 <VerticalStackLayout>
-                    <Label Text="Priority" FontSize="25"/>
+                    <Label Text="Priority" FontSize="20"/>
                     <Label Text="This will add 20% to your total cost" FontSize="12"/>
                 </VerticalStackLayout>
-                <Switch IsToggled="true"/>
+                <Switch IsToggled="true" Grid.Column="1"/>
             </Grid>
-            <Grid Padding="20">
+            <Grid
+                ColumnDefinitions="*,auto">
                 <VerticalStackLayout>
-                    <Label Text="Email Address" FontSize="25"/>
+                    <Label Text="Email Address" FontSize="20"/>
                 </VerticalStackLayout>
-                <Switch IsToggled="true"/>
+                <Switch IsToggled="true" Grid.Column="1"/>
             </Grid>
-            <Grid Padding="20">
+            <Grid
+                ColumnDefinitions="*,auto">
                 <VerticalStackLayout>
-                    <Label Text="Phone Number" FontSize="25"/>
+                    <Label Text="Phone Number" FontSize="20"/>
                 </VerticalStackLayout>
-                <Switch IsToggled="true"/>
+                <Switch IsToggled="true"  Grid.Column="1"/>
             </Grid>
-            <Grid Padding="20" ColumnDefinitions="Auto,*">
+            <Grid
+                ColumnDefinitions="Auto,*">
                 <VerticalStackLayout>
-                    <Label Text="Default Payment Method" FontSize="25"/>
+                    <Label Text="Default Payment Method" VerticalOptions="Center" FontSize="18"/>
                 </VerticalStackLayout>
-                <Picker Grid.Column="1" Title="Select" FontSize="18" HorizontalTextAlignment="End">
+                <Picker Grid.Column="1" Title="Select" FontSize="18" HorizontalTextAlignment="Center" Background="Transparent">
                 <Picker.Items>
-                <x:String>MTN Mobile Money</x:String>
-                <x:String>Airtel Mobile Money</x:String>
-                <x:String>Zamtel Mobile Money</x:String>
+                <x:String>MTN MM</x:String>
+                <x:String>Airtel MM</x:String>
+                <x:String>Zamtel MM</x:String>
                 </Picker.Items>
                 </Picker>
             </Grid>

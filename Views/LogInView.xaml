@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SprintathonLaundryApp.Views.LogInView"
@@ -6,19 +6,92 @@
              x:DataType="viewmodel:LogInViewModel"
              Title="Log in"
              Shell.NavBarIsVisible="False">
-    <VerticalStackLayout>
-        <Label 
-            Text="Don't have an account?"
-            VerticalOptions="Center" 
+    
+     <Grid
+        RowDefinitions="Auto, *, Auto"
+        Padding="0,40, 0,0">
+        <Image
+            Grid.Row="0"
+            Source="log_in.png"
+            HeightRequest="300"
             HorizontalOptions="Center" />
-        <Button Text="Sign up"
-                
-                IsEnabled="{Binding IsNotBusy}"
-                Command="{Binding  NavigateToSignUpCommand}"/>
         
-        <Button Text="Forgot Password?"
-                
-                IsEnabled="{Binding IsNotBusy}"
-                Command="{Binding  NavigateToForgotPasswordCommand}"/>
-    </VerticalStackLayout>
+        <VerticalStackLayout
+            Grid.Row="1"
+            Padding="30"
+            Spacing="10">
+                  
+            <Label 
+                Text="Sign In"
+                VerticalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalOptions="Start" />
+            <Frame CornerRadius="10" BorderColor="White" Padding="1">
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                   
+                    </Grid.ColumnDefinitions>
+                    <Image Source="at.png" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" HeightRequest="50" Placeholder="Email address" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+            <Frame CornerRadius="10" BorderColor="White" Padding="1">
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                   
+                    </Grid.ColumnDefinitions>
+                    <Image Source="password.png" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" HeightRequest="50" Placeholder="Password" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+            <Button
+                Text="forgotten password?"
+                HorizontalOptions="End"
+                Background="Transparent"
+                Command = "{Binding  NavigateToForgotPasswordCommand}"
+                TextColor="Gray"/>
+            <Button
+                Text="Sign in"
+                CornerRadius="20"
+                Command="{Binding SignInCommand}"/>
+            <Label 
+                Text="Or"
+                VerticalOptions="Center"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                FontSize= "Body"/>
+            <Frame CornerRadius="20" BackgroundColor="#DCF0FA" BorderColor="#DCF0FA" Padding="10">
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                   
+                    </Grid.ColumnDefinitions>
+                    <Image Source="google.png" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        TextColor="Gray"
+                        Text="Sign in with Google"/>
+                </Grid>
+            </Frame>
+            
+
+        </VerticalStackLayout>
+        <Button
+                Grid.Row="2"
+                Text="New Laundry? Sign Up"
+                BackgroundColor="White"
+                TextColor="SkyBlue"
+                Command="{Binding  NavigateToSignUpCommand}"
+                Margin="0,20,0,60"/>
+    </Grid>
+
 </ContentPage>
