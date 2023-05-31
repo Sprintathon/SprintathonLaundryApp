@@ -6,12 +6,25 @@
              x:DataType="viewmodel:EnterOtpViewModel"
              Title="EnterOtp">
     <VerticalStackLayout>
-        <Label 
+        <Grid RowDefinitions="*,*,*">
+
+            <Image 
+                Grid.Row="0"
+               Source="enter_otp.png"
+            />
+            <VerticalStackLayout
+                
+            Grid.Row="1"
+                >
+
+                <Label 
             Text="Enter Otp"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Button 
+                <Button 
             Text="Enter New Password"
             Command="{Binding NavigateToNewPassswordCommand}"/>
+            </VerticalStackLayout>
+        </Grid>
     </VerticalStackLayout>
 </ContentPage>
