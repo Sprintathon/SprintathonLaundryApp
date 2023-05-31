@@ -87,6 +87,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\enter_otp.svg" />
+	  <None Remove="Resources\Images\forgot_password.svg" />
 	  <None Remove="Resources\Images\support.png" />
 	  <None Remove="Resources\Images\services.svg" />
 	  <None Remove="Resources\Images\at.svg" />
