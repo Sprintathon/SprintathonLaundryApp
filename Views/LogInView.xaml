@@ -6,7 +6,8 @@
              x:DataType="viewmodel:LogInViewModel"
              Title="Log in"
              Shell.NavBarIsVisible="False">
-    
+    <ScrollView
+        Orientation="Vertical">    
      <Grid
         RowDefinitions="Auto, *, Auto"
         Padding="0,40, 0,0">
@@ -82,16 +83,17 @@
                         Text="Sign in with Google"/>
                 </Grid>
             </Frame>
-            
-
-        </VerticalStackLayout>
-        <Button
+         <Button
                 Grid.Row="2"
                 Text="New Laundry? Sign Up"
                 BackgroundColor="White"
                 TextColor="SkyBlue"
                 Command="{Binding  NavigateToSignUpCommand}"
-                Margin="0,20,0,60"/>
+                Margin="0,20,0,60"/>           
+
+        </VerticalStackLayout>
+
     </Grid>
+ </ScrollView>
 
 </ContentPage>

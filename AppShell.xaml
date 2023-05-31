@@ -18,11 +18,17 @@
             <ShellContent  ContentTemplate="{DataTemplate local:SettingsView}"/>
             
         </Tab>
+        <Tab Icon="settings" Title="Services">
+            <ShellContent  ContentTemplate="{DataTemplate local:ServiceView}"/>
+
+        </Tab>
     </TabBar>
 
+    
+    
     <ShellContent
-        Title="Log in"
-        ContentTemplate="{DataTemplate local:LogInView}"
-        Route="LogIn" />
+        Title="Welcome"
+        ContentTemplate="{DataTemplate local:WelcomeView}"
+        Route="Welcome" />
 
 </Shell>
