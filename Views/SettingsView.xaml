@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SprintathonLaundryApp.Views.SettingsView"
+             Title="Settings">
+    <ScrollView
+        Orientation="Vertical">
+
+        <VerticalStackLayout>
+            <Grid Padding="20">
+                <VerticalStackLayout>
+                    <Label Text="Pressed Clothing" FontSize="25"/>
+                    <Label Text="Your cloths will be pressed and 20% will be added to your cost" FontSize="12"/>
+                </VerticalStackLayout>
+                <Switch IsToggled="true"/>
+            </Grid>
+            
+            <Grid Padding="20" ColumnDefinitions="Auto,*">
+                <VerticalStackLayout>
+                    <Label Text="Default Pickup Location" FontSize="25"/>
+                    
+                </VerticalStackLayout>
+                <Picker Grid.Column="1" Title="Select" FontSize="18" HorizontalTextAlignment="End">
+                <Picker.Items>
+                <x:String>In person</x:String>
+                <x:String>Delivered</x:String>
+                </Picker.Items>
+                </Picker>
+            
+            </Grid>
+            
+            <Grid Padding="20">
+                <VerticalStackLayout>
+                    <Label Text="Priority" FontSize="25"/>
+                    <Label Text="This will add 20% to your total cost" FontSize="12"/>
+                </VerticalStackLayout>
+                <Switch IsToggled="true"/>
+            </Grid>
+            <Grid Padding="20">
+                <VerticalStackLayout>
+                    <Label Text="Email Address" FontSize="25"/>
+                </VerticalStackLayout>
+                <Switch IsToggled="true"/>
+            </Grid>
+            <Grid Padding="20">
+                <VerticalStackLayout>
+                    <Label Text="Phone Number" FontSize="25"/>
+                </VerticalStackLayout>
+                <Switch IsToggled="true"/>
+            </Grid>
+            <Grid Padding="20" ColumnDefinitions="Auto,*">
+                <VerticalStackLayout>
+                    <Label Text="Default Payment Method" FontSize="25"/>
+                </VerticalStackLayout>
+                <Picker Grid.Column="1" Title="Select" FontSize="18" HorizontalTextAlignment="End">
+                <Picker.Items>
+                <x:String>MTN Mobile Money</x:String>
+                <x:String>Airtel Mobile Money</x:String>
+                <x:String>Zamtel Mobile Money</x:String>
+                </Picker.Items>
+                </Picker>
+            </Grid>
+        </VerticalStackLayout>
+
+
+    </ScrollView>
+</ContentPage>

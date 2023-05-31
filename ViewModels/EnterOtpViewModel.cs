@@ -10,9 +10,9 @@ namespace SprintathonLaundryApp.ViewModels
     public partial class EnterOtpViewModel : BaseViewModel
     {
         [RelayCommand]
-        async public void NavigateToNewPasssword() 
+        public void NavigateToNewPasssword() 
         {
-
+                Shell.Current.GoToAsync(nameof(CreatePasswordView));
         
         }
     }

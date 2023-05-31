@@ -1,14 +1,28 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="SprintathonLaundryApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:SprintathonLaundryApp"
+    xmlns:local="clr-namespace:SprintathonLaundryApp.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
+    <TabBar Route="Home">
+        <!--Must inlcude services view-->
+
+        <Tab  Icon="dotnet_bot">
+            <ShellContent Title="Orders" ContentTemplate="{DataTemplate local:OrderHistoryView}"/>
+            
+        </Tab>
+        
+        <Tab Icon="dotnet_bot">
+            <ShellContent Title="Settings" ContentTemplate="{DataTemplate local:SettingsView}"/>
+            
+        </Tab>
+    </TabBar>
+
+    <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
 
 </Shell>
