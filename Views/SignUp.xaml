@@ -84,8 +84,8 @@
                         <ColumnDefinition Width="*"/>
                    
                     </Grid.ColumnDefinitions>
-                    <Image Source="sig" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
-                    <Entry Text="{Binding NewUser.Location}"  Grid.Column="1" HeightRequest="50" Placeholder="Location" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                    <Image Source="at" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry Text="{Binding NewUser.Location}"  Grid.Column="1" HeightRequest="50" Placeholder="Home Location" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                 </Grid>
             </Frame>
 
@@ -100,24 +100,17 @@
                     <Entry Text="{Binding NewUser.Password}"  Grid.Column="1" HeightRequest="50" Placeholder="Password" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
                 </Grid>
             </Frame>
-    
-            <Button
+                
+                <Button
                 Text="Sign Up"
                 CornerRadius="20"
                 Command="{Binding SignUpCommand}"
                 />
-            <Label 
-                Text="Or"
-                VerticalOptions="Center"
-                FontAttributes="Bold"
-                HorizontalOptions="Center"
-                FontSize= "Body"/>
+                
 
-            
-
-        </VerticalStackLayout>
+            </VerticalStackLayout>
         <Button
-                Text="New Laundry? Sign Up"
+                Text="Not new Laundry? Sign In"
                 BackgroundColor="White"
                 TextColor="SkyBlue"
                 Margin="0,20,0,60"/>

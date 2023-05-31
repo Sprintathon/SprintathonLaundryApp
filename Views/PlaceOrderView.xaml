@@ -4,13 +4,13 @@
              x:Class="SprintathonLaundryApp.Views.PlaceOrderView"
              xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
              x:DataType="viewmodel:PlaceOrderViewModel"
-             Title="HandWashingView">
+             Title="Place Order">
     <VerticalStackLayout>
         <Label 
             Text="Welcome to Place Order View"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Button
+        <Button Text="Order Summary"
             IsEnabled="{Binding IsNotBusy}"
             Command="{Binding NavigateToOrderSummaryCommand}"/>
     </VerticalStackLayout>

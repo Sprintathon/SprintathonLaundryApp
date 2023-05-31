@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SprintathonLaundryApp.Views.ServiceOptionView"
+              xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
+             x:DataType="viewmodel:ServiceOptionsViewModel"
+             Title="ServiceOptionView" 
+             Shell.NavBarIsVisible="False">
+    
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to service options"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

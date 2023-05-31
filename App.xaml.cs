@@ -12,7 +12,8 @@ public partial class App : Application
 		//not, the it will automayically move to the log in veiw
         string firstName = Preferences.Default.Get("first_name", "Unknown");
 		if (firstName.Equals("Unknown"))
-			Shell.Current.GoToAsync($"//LogIn");
+			//Shell.Current.GoToAsync($"//LogIn");
+			Shell.Current.GoToAsync($"//Welcome");
 		//Otherwise it will act as usual by proceeding to the main view;
     }
 }
