@@ -3,6 +3,7 @@ global using CommunityToolkit.Maui;
 global using Microsoft.Extensions.Logging;
 global using SprintathonLaundryApp.ViewModels;
 global using SprintathonLaundryApp.Views;
+global using CommunityToolkit.Mvvm.Input;
 namespace SprintathonLaundryApp;
 
 public static class MauiProgram

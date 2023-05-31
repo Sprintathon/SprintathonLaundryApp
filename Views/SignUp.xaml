@@ -1,14 +1,129 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SprintathonLaundryApp.Views.SignUp"
              xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
              x:DataType="viewmodel:SignUpViewModel"
-             Title="SignUp">
-    <VerticalStackLayout>
-        <Label 
-            Text="Sign Up"
-            VerticalOptions="Center" 
+             Title="SignUp"
+             Shell.NavBarIsVisible="False">
+    <ScrollView
+        Orientation="Vertical">
+
+       <VerticalStackLayout
+            Padding="0,40, 0,0">
+        <Image
+            Grid.Row="0"
+            Source="sign_up"
+            HeightRequest="300"
             HorizontalOptions="Center" />
+        
+        <VerticalStackLayout
+            Grid.Row="1"
+            Padding="30"
+            Spacing="10">
+                  
+            <Label 
+                Text="Sign up"
+                VerticalOptions="Center"
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalOptions="Start" />
+            <Frame CornerRadius="10" BorderColor="White" Padding="1">
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                   
+                    </Grid.ColumnDefinitions>
+                    <Image Source="at.png" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry Text="{Binding NewUser.Email}" Grid.Column="1" HeightRequest="50" Placeholder="Email address" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+            <Frame CornerRadius="10" BorderColor="White" Padding="1">
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                   
+                    </Grid.ColumnDefinitions>
+                    <Image Source="phone" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry  Text="{Binding NewUser.PhoneNumber}"  Grid.Column="1" HeightRequest="50" Placeholder="Phone number" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+
+            
+            <Frame CornerRadius="10" BorderColor="White" Padding="1">
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                   
+                    </Grid.ColumnDefinitions>
+                    <Image Source="sig" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry  Text="{Binding NewUser.FirstName}"  Grid.Column="1" HeightRequest="50" Placeholder="First Name" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+
+            
+            <Frame CornerRadius="10" BorderColor="White" Padding="1">
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                   
+                    </Grid.ColumnDefinitions>
+                    <Image Source="sig" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry  Text="{Binding NewUser.LastName}"  Grid.Column="1" HeightRequest="50" Placeholder="Last Name" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="10" BorderColor="White" Padding="1">
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                   
+                    </Grid.ColumnDefinitions>
+                    <Image Source="sig" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry Text="{Binding NewUser.Location}"  Grid.Column="1" HeightRequest="50" Placeholder="Location" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="10" BorderColor="White" Padding="1">
+                <Grid ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                   
+                    </Grid.ColumnDefinitions>
+                    <Image Source="password.png" HeightRequest="25" WidthRequest="25" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Entry Text="{Binding NewUser.Password}"  Grid.Column="1" HeightRequest="50" Placeholder="Password" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+    
+            <Button
+                Text="Sign Up"
+                CornerRadius="20"
+                Command="{Binding SignUpCommand}"
+                />
+            <Label 
+                Text="Or"
+                VerticalOptions="Center"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                FontSize= "Body"/>
+
+            
+
+        </VerticalStackLayout>
+        <Button
+                Text="New Laundry? Sign Up"
+                BackgroundColor="White"
+                TextColor="SkyBlue"
+                Margin="0,20,0,60"/>
     </VerticalStackLayout>
+
+    </ScrollView>
+
+
 </ContentPage>

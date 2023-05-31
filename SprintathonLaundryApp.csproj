@@ -30,6 +30,9 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
+	  <CreatePackage>false</CreatePackage>
+	</PropertyGroup>
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -56,6 +59,7 @@
 
 	<ItemGroup>
 	  <Folder Include="Models\" />
+	  <Folder Include="Services\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -73,4 +77,33 @@
 	  </MauiXaml>
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Resources\Images\support.png" />
+	  <None Remove="Resources\Images\services.svg" />
+	  <None Remove="Resources\Images\at.svg" />
+	  <None Remove="Resources\Images\settings.svg" />
+	  <None Remove="Resources\Images\orders.svg" />
+	  <None Remove="Resources\Images\google.svg" />
+	  <None Remove="Resources\Images\hand_wash.svg" />
+	  <None Remove="Resources\Images\logo.svg" />
+	  <None Remove="Resources\Images\laundry.svg" />
+	  <None Remove="Resources\Images\password.svg" />
+	  <None Remove="Resources\Images\log_in.svg" />
+	  <None Remove="Services\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\support.png" />
+	  <BundleResource Include="Resources\Images\services.svg" />
+	  <BundleResource Include="Resources\Images\support.png" />
+	  <BundleResource Include="Resources\Images\services.svg" />
+	  <BundleResource Include="Resources\Images\at.svg" />
+	  <BundleResource Include="Resources\Images\settings.svg" />
+	  <BundleResource Include="Resources\Images\orders.svg" />
+	  <BundleResource Include="Resources\Images\google.svg" />
+	  <BundleResource Include="Resources\Images\hand_wash.svg" />
+	  <BundleResource Include="Resources\Images\logo.svg" />
+	  <BundleResource Include="Resources\Images\laundry.svg" />
+	  <BundleResource Include="Resources\Images\password.svg" />
+	  <BundleResource Include="Resources\Images\log_in.svg" />
+	</ItemGroup>
 </Project>
