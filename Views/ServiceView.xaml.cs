@@ -9,4 +9,11 @@ public partial class ServiceView : ContentPage
 
 
     }
+
+   
+    public void OnServiceImagClicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync(nameof(ServiceOptionView));
+    }
+
 }

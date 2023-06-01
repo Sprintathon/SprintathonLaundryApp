@@ -1,16 +1,79 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SprintathonLaundryApp.Views.ServiceOptionView"
-              xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
-             x:DataType="viewmodel:ServiceOptionsViewModel"
-             Title="ServiceOptionView" 
-             Shell.NavBarIsVisible="False">
-    
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to service options"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+<ContentPage
+    x:Class="SprintathonLaundryApp.Views.ServiceOptionView"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:model="clr-namespace:SprintathonLaundryApp.Models"
+    xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
+    Title="ServiceOptionView"
+    x:DataType="viewmodel:ServiceOptionsViewModel"
+    Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout>
+
+
+            <Label
+                HorizontalOptions="Center"
+                Text="Welcome to services"
+                VerticalOptions="Center" />
+
+
+
+            <CollectionView>
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type model:User}">
+                        <model:User
+                            Name="VML LAUNDRY"
+                            Id="0"
+                            Location="VML" />
+
+                        <model:User
+                            Name="Kitwe LAUNDRY"
+                            Id="1"
+                            Location="Kitwe Town" />
+
+
+
+                    </x:Array>
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:User">
+                        <HorizontalStackLayout Padding="10">
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="100"
+                                HorizontalOptions="Start"
+                                Source="hand_wash.png"
+                                VerticalOptions="Center"
+                                WidthRequest="100" />
+                            <VerticalStackLayout Padding="10">
+                                <Label
+                                    HorizontalOptions="Start"
+                                    Text="{Binding Name}"
+                                    VerticalOptions="Center" />
+                                <Label
+                                    HorizontalOptions="Start"
+                                    Text="{Binding Location}"
+                                    VerticalOptions="Center" />
+                            </VerticalStackLayout>
+                            <Label
+                                Padding="20"
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                Text="4.6"
+                                VerticalOptions="Center" />
+                            <Image
+                                Aspect="AspectFill"
+                                HeightRequest="50"
+                                HorizontalOptions="Center"
+                                Source="star.png"
+                                VerticalOptions="Center"
+                                WidthRequest="50" />
+
+                        </HorizontalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
