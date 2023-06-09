@@ -1,4 +1,4 @@
-using SprintathonLaundryApp.ViewModels;
+global using SprintathonLaundryApp.ViewModels;
 
 namespace SprintathonLaundryApp.Views;
 

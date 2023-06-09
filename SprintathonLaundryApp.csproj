@@ -55,6 +55,7 @@
 		<PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -103,6 +104,9 @@
 	  <None Remove="Resources\Images\password.svg" />
 	  <None Remove="Resources\Images\log_in.svg" />
 	  <None Remove="Services\" />
+	  <None Remove="Resources\Images\washing_machine.svg" />
+	  <None Remove="Resources\Images\jacket.svg" />
+	  <None Remove="Resources\Images\dry_clean.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\support.png" />
@@ -118,5 +122,10 @@
 	  <BundleResource Include="Resources\Images\laundry.svg" />
 	  <BundleResource Include="Resources\Images\password.svg" />
 	  <BundleResource Include="Resources\Images\log_in.svg" />
+	  <BundleResource Include="Resources\Images\washing_machine.svg" />
+	  <BundleResource Include="Resources\Images\jacket.svg" />
+	  <BundleResource Include="Resources\Images\washing_machine.svg" />
+	  <BundleResource Include="Resources\Images\jacket.svg" />
+	  <BundleResource Include="Resources\Images\dry_clean.svg" />
 	</ItemGroup>
 </Project>

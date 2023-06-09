@@ -1,54 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="SprintathonLaundryApp.Views.PlaceOrderView"
-             xmlns:models="clr-namespace:SprintathonLaundryApp.Models"
+             x:Class="SprintathonLaundryApp.Views.CreateWashingBasketView"
              xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
-             x:DataType="viewmodel:PlaceOrderViewModel"
-             Title="Place Order"
+             
+             xmlns:models="clr-namespace:SprintathonLaundryApp.Models"
+             x:DataType="viewmodel:CreateWashingBasketViewModel"
+             Title="Create Washing Basket"
              Shell.NavBarIsVisible="False">
-    <Grid RowDefinitions="Auto ,*, Auto" Padding="20, 10" >
-            <Label FontSize="30"  Text="Order Summery" FontAttributes="Bold"/>
+    <Grid RowDefinitions="Auto, *, Auto" Padding="20" >
+            <Label FontSize="30"  Text="Create Washing Basket" FontAttributes="Bold"/>
 
     <ScrollView Grid.Row="1" VerticalScrollBarVisibility="Never">
 
         <VerticalStackLayout Spacing="20">
-            <Grid ColumnDefinitions="*,auto">
-                <VerticalStackLayout>
-                    <Label Text="Pressed Clothing" FontSize="20"/>
-                    <Label Text="Your cloths will be pressed and 20% will be added to your cost" FontSize="10"/>
-                </VerticalStackLayout>
-                <Switch IsEnabled="False" IsToggled="true" Grid.Column="1"/>
-            </Grid>
             
-            <Grid ColumnDefinitions="*,auto">
-                <VerticalStackLayout>
-                    <Label Text="Priority" FontSize="20"/>
-                    <Label Text="Your cloths will be pressed and 20% will be added to your cost" FontSize="10"/>
-                </VerticalStackLayout>
-                <Switch IsEnabled="False" IsToggled="true" Grid.Column="1"/>
-            </Grid>
-
-              <Grid ColumnDefinitions="*,auto">
-                <VerticalStackLayout>
-                    <Label Text="Pickup and delivery type" FontSize="20"/>
-                    <Label Text="Your cloths will be pressed and 20% will be added to your cost" FontSize="10"/>
-                </VerticalStackLayout>
-                <Entry IsEnabled="False" Text="In store" Grid.Column="1"/>
-            </Grid>
-
-            
-              <Grid ColumnDefinitions="*,auto">
-                <VerticalStackLayout>
-                    <Label Text="Payment number" FontSize="20"/>
-                    <Label Text="Your cloths will be pressed and 20% will be added to your cost" FontSize="10"/>
-                </VerticalStackLayout>
-                <Entry IsEnabled="False" Text="0966023230" Grid.Column="1"/>
-            </Grid>
-        <CollectionView  
-                        ItemsSource="{Binding Garments}"
+        <CollectionView VerticalOptions="FillAndExpand" 
+                        IsGrouped="True" 
+                        ItemsSource="{Binding GroupedGarments}"
                         >
-           
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate x:DataType="models:GarmentGroup">
+                    <Grid ColumnDefinitions="Auto, *, Auto" Margin="0, 10">
+                        <!--<Image Source="{Binding  Sarments}" VerticalOptions="Center" HeightRequest="20" WidthRequest="20" />-->
+                        <Label Grid.Column="0" Text="{Binding Icon}" FontSize="30" />
+                        <Label Grid.Column="1" Text="{Binding GroupTitle}" FontSize="25" FontAttributes="Bold"  VerticalOptions="Center" VerticalTextAlignment="Center"/>
+                        <Label Grid.Column="2" Text="{Binding GroupIcon}" FontSize="30" />
+
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={x:RelativeSource AncestorType={x:Type viewmodel:CreateWashingBasketViewModel}},Path=AddOrRemoveGroupDataCommand}" CommandParameter="{Binding .}" />
+                        </Grid.GestureRecognizers>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:Garment">
                     <VerticalStackLayout Margin="0,5,0,5" Spacing="20">
@@ -63,33 +47,38 @@
                                     <Label VerticalTextAlignment="Center" Text="−" FontSize="38" />
                                     <Label VerticalTextAlignment="Center" Text="0" FontSize="30" />
                                     <Label VerticalTextAlignment="Center" Text="+" FontSize="38" />
+
                                 </HorizontalStackLayout>
+
                             </Grid>
                         </Frame>
                     </VerticalStackLayout>
+                    
                 </DataTemplate>
             </CollectionView.ItemTemplate>
+            <!--<CollectionView.GroupFooterTemplate>
+                <DataTemplate x:DataType="models:EmployeeGroup">
+                    <Label Text="{Binding FooterTitle}" FontSize="22" BackgroundColor="LightBlue"/>
+                </DataTemplate>
+            </CollectionView.GroupFooterTemplate>-->
         </CollectionView>
-            
+
 
         </VerticalStackLayout>
     </ScrollView>
         <VerticalStackLayout Grid.Row="2"  >
-
-
             <Grid ColumnDefinitions="*,*" Margin="0, 20">
                     <Label VerticalTextAlignment="Center" Text="Total time : 3 hours" FontSize="20" />
-                    <Label Grid.Column="1" HorizontalOptions="End" VerticalTextAlignment="Center" Text="Total Cost : K300" FontSize="20" />
+                    <Label Grid.Column="1" HorizontalOptions="End" VerticalTextAlignment="Center" Text="Total Cost : K30" FontSize="20" />
 
 
 
             </Grid>
             <Button
                 Command="{Binding NavigateToPlaceOrderCommand}"
-                Text="Place Order" />
+                Text="Create to washing basket" />
 
         </VerticalStackLayout>
 
     </Grid>
-
 </ContentPage>

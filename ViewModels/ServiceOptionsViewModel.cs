@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SprintathonLaundryApp.ViewModels
+﻿namespace SprintathonLaundryApp.ViewModels
 {
     public partial class ServiceOptionsViewModel : BaseViewModel
     {
-        
+        [RelayCommand]
+        public void NavigateToCreateBacket()
+        {
+            Shell.Current.GoToAsync(nameof(CreateWashingBasketView));
+        }
     }
 
 }

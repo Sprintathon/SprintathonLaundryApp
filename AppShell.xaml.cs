@@ -19,5 +19,7 @@ public partial class AppShell : Shell
         Routing.RegisterRoute(nameof(ServiceView), typeof(ServiceView));
         Routing.RegisterRoute(nameof(ServiceOptionView), typeof(ServiceOptionView));
         Routing.RegisterRoute(nameof(WelcomeView), typeof(WelcomeView));
+        Routing.RegisterRoute(nameof(CreateWashingBasketView), typeof(CreateWashingBasketView));
+        Routing.RegisterRoute(nameof(AboutView), typeof(AboutView));
     }
 }

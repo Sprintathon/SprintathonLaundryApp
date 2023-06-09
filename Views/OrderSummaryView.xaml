@@ -4,15 +4,49 @@
              x:Class="SprintathonLaundryApp.Views.OrderSummaryView"
              xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
              x:DataType="viewmodel:OrderSummaryViewModel"
-             Title="Order">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Order Summary"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Title="Order Summery"
+             Shell.NavBarIsVisible="False">
+    <ScrollView>
+        <VerticalStackLayout Spacing="20">
+            <Label FontSize="30"  Padding="20, 10" Text="Order Summery" FontAttributes="Bold"/>
+            <Grid ColumnDefinitions="*,auto"  Padding="20, 10" Margin="1">
+                <VerticalStackLayout>
+                    <Label Text="Total Amount" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="22"/>
+                </VerticalStackLayout>
+                <Label IsEnabled="False" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+            </Grid>
+            <Grid ColumnDefinitions="*,auto"  Padding="20, 10" Margin="1" >
+                <VerticalStackLayout>
+                    <Label Text="Time" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="22"/>
+                </VerticalStackLayout>
+                <Label IsEnabled="False" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+            </Grid>
+            <Grid ColumnDefinitions="*,auto"  Padding="20, 10" Margin="1" >
+                <VerticalStackLayout>
+                    <Label Text="Pick Up and Delivery type" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="22"/>
+                </VerticalStackLayout>
+                <Label IsEnabled="False" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+            </Grid>
+            <Grid ColumnDefinitions="*,auto"  Padding="20, 10" Margin="1" >
+                <VerticalStackLayout>
+                    <Label Text="Location" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="22"/>
+                </VerticalStackLayout>
+                <Label IsEnabled="False" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+            </Grid>
+            <Grid ColumnDefinitions="*,auto"  Padding="20, 10" Margin="1" >
+                <VerticalStackLayout>
+                    <Label Text="Payment Type" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="22"/>
+                </VerticalStackLayout>
+                <Label IsEnabled="False" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+            </Grid>
+            <Grid ColumnDefinitions="*,auto"  Padding="20, 10" Margin="0" >
+                <VerticalStackLayout>
+                    <Label Text="Order Id" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="22"/>
+                </VerticalStackLayout>
+                <Label IsEnabled="False" FontSize="20" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+            </Grid>
+           <Button Text="Finish" Margin="20"/>
+        </VerticalStackLayout>
 
-        <Button
-            IsEnabled="{Binding IsNotBusy}"
-            Command="{Binding NavigateToOrderHistoryCommand}"/>
-    </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

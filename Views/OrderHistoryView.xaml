@@ -1,15 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                xmlns:model="clr-namespace:SprintathonLaundryApp.Models"
              x:Class="SprintathonLaundryApp.Views.OrderHistoryView"
-             Title="OrderHistoryView">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Order History"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-         <Button Text="Place Another Order"
-            IsEnabled="{Binding IsNotBusy}"
-            Command="{Binding NavigateToPlaceOrderCommand}"/>
-    </VerticalStackLayout>
+             Title="OrderHistoryView"
+             Shell.NavBarIsVisible="False">
+  <ScrollView Padding="20">
+        <VerticalStackLayout>
+            <Label FontSize="30"  Text="Order History" FontAttributes="Bold"/>
+
+
+            <CollectionView>
+                <CollectionView.ItemsSource>
+                    <x:Array Type="{x:Type model:User}">
+                        <model:User
+                            Name="VML LAUNDRY"
+                            Id="0"
+                            Location="VML" />
+
+                        <model:User
+                            Name="Kitwe LAUNDRY"
+                            Id="1"
+                            Location="Kitwe Town" />
+
+                    </x:Array>
+
+                </CollectionView.ItemsSource>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:User"  >
+                        <VerticalStackLayout Margin="10" Padding="0">
+
+                        <Frame Padding="10, 0" Margin="0">
+                            <Frame.GestureRecognizers>
+                                <!--<TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:ServiceOptionsViewModel}}, Path=NavigateToCreateBacketCommand}"
+                                    CommandParameter="{Binding .}"/>-->
+
+                            </Frame.GestureRecognizers>
+                            <VerticalStackLayout Spacing="0">
+                                 <Grid ColumnDefinitions="*,auto"  Padding="1, 5" Margin="1">
+                            <VerticalStackLayout>
+                                <Label Text="Order Status" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="16"/>
+                            </VerticalStackLayout>
+                            <Label IsEnabled="False" FontSize="13" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+                        </Grid>
+                        <Grid ColumnDefinitions="*,auto"  Padding="1, 5" Margin="1">
+                            <VerticalStackLayout>
+                                <Label Text="Total Amount" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="16"/>
+                            </VerticalStackLayout>
+                            <Label IsEnabled="False" FontSize="13" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+                        </Grid>
+                        <Grid ColumnDefinitions="*,auto"  Padding="1, 5" Margin="1" >
+                            <VerticalStackLayout>
+                                <Label Text="Time" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="16"/>
+                            </VerticalStackLayout>
+                            <Label IsEnabled="False" FontSize="13" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+                        </Grid>
+                        <Grid ColumnDefinitions="*,auto"  Padding="1, 5" Margin="1" >
+                            <VerticalStackLayout>
+                                <Label Text="Pick Up and Delivery type" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="16"/>
+                            </VerticalStackLayout>
+                            <Label IsEnabled="False" FontSize="13" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+                        </Grid>
+                        <Grid ColumnDefinitions="*,auto"  Padding="1, 5" Margin="1" >
+                            <VerticalStackLayout>
+                                <Label Text="Location" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="16"/>
+                            </VerticalStackLayout>
+                            <Label IsEnabled="False" FontSize="13" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+                        </Grid>
+                        <Grid ColumnDefinitions="*,auto"  Padding="1, 5" Margin="1" >
+                            <VerticalStackLayout>
+                                <Label Text="Payment Type" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="16"/>
+                            </VerticalStackLayout>
+                            <Label IsEnabled="False" FontSize="13" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+                        </Grid>
+                        <Grid ColumnDefinitions="*,auto"  Padding="1, 5" Margin="0" >
+                            <VerticalStackLayout>
+                                <Label Text="Order Id" VerticalTextAlignment="Center" FontAttributes="Bold" FontSize="16"/>
+                            </VerticalStackLayout>
+                            <Label IsEnabled="False" FontSize="13" FontAttributes="Bold" VerticalTextAlignment="Center" Text="0966023230" Grid.Column="1"/>
+                        </Grid>
+           
+        </VerticalStackLayout>
+
+                        </Frame>
+
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

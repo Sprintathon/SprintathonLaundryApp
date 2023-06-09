@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SprintathonLaundryApp.Views.WelcomeView"
@@ -8,39 +8,42 @@
              Shell.NavBarIsVisible="False">
     <ScrollView
         Orientation="Vertical">
-        <VerticalStackLayout Spacing="100" Padding="20" BackgroundColor="White">
-            <Grid Padding="0,20,0,0" ColumnDefinitions="*,auto">
-                <VerticalStackLayout>
-                    <Label Text="Laundry" FontSize="36" TextColor="black" FontFamily="Monomaniac One" HorizontalOptions="Center"/>
-                    <Label Text="Save time looking for laundry services, Sit back and we will do that for you" TextColor="black" FontSize="20"/>
-                </VerticalStackLayout>
-                
-            </Grid>
-            
-            <Grid Padding="0,20,0,0" ColumnDefinitions="*,auto">
-                <VerticalStackLayout>
-                   
-                    <Image Source="logo"/>
-                </VerticalStackLayout>
-                
-            </Grid>
+            <Grid
+                Padding="20,30"
+                ColumnDefinitions="*,auto"
+                RowDefinitions="Auto, *, Auto">
+                    <VerticalStackLayout
+                        Grid.Row="0">
+                        <Label
+                            Text="Laundry"
+                            FontSize="36"
+                            TextColor="black"
+                            FontFamily="Monomaniac One"
+                            HorizontalOptions="Center"
+                            />
+                        <Label
+                            Text="Save time looking for laundry services, Sit back and we will do that for you"
+                            TextColor="black"
+                            FontSize="20"
+                            />
+                    </VerticalStackLayout>
 
-            <Grid Padding="0,20,0,0" ColumnDefinitions="*,auto">
-                <VerticalStackLayout>
-                    <Button 
-                    BackgroundColor="#50B8E7"
-                    TextColor="White"
-                    FontAttributes="Bold"
-                    FontSize="Medium"
-                   
-                    Text="Continue"
-                        Command="{Binding NavigateToSignInCommand}" />
+                    <Image
+                        Source="logo"
+                        Grid.Row="1"/>
 
-                </VerticalStackLayout>
+                    <Button
+                        BackgroundColor="#50B8E7"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="Medium"
+                        Text="Continue"
+                        Command="{Binding NavigateToSignInCommand}"
+                        Grid.Row="2"/>
+
 
             </Grid>
 
         
-    </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

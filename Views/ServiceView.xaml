@@ -1,19 +1,18 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="SprintathonLaundryApp.Views.ServiceView"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:model="clr-namespace:SprintathonLaundryApp.Models"
     xmlns:viewmodel="clr-namespace:SprintathonLaundryApp.ViewModels"
-    Title="Service"
+    Title="Services"
+    Shell.NavBarIsVisible="False"
     x:DataType="viewmodel:ServiceViewModel">
-    <ScrollView>
+    <ScrollView Padding="15">
 
         <VerticalStackLayout>
-            <Label
-                HorizontalOptions="Center"
-                Text="Welcome to services"
-                VerticalOptions="Center" />
+                        <Label FontSize="30"  Text="Services" FontAttributes="Bold"/>
+
 
 
             <CollectionView>
@@ -23,65 +22,64 @@
                             Name="Hand Washing"
                             Description="WHWHWHWWHWHWHWHWHW"
                             Id="1"
-                            Image="hand_wash.png"
+                            Image="hand_wash"
                             Price="12.23" />
                         <model:Services
                             Name="Machine Washing"
                             Description="WHWHWHWWHWHWHWHWHW"
                             Id="2"
-                            Image="hand_wash.png"
+                            Image="washing_machine"
                             Price="30.23" />
                         <model:Services
                             Name="Dry Cleaning"
                             Description="WHWHWHWWHWHWHWHWHW"
                             Id="3"
-                            Image="hand_wash.png"
+                            Image="dry_clean"
                             Price="12.23" />
                         <model:Services
                             Name="Suite"
                             Description="WHWHWHWWHWHWHWHWHW"
                             Id="4"
-                            Image="hand_wash.png"
+                            Image="jacket"
                             Price="22.23" />
 
                     </x:Array>
                 </CollectionView.ItemsSource>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Services">
+                        <VerticalStackLayout Margin="5">
 
-                        <Grid
+
+                        <Frame  Padding="5">
+
+                        <VerticalStackLayout
                             Padding="10"
-                            RowDefinitions="*"
-                            RowSpacing="0">
-
-
-
+                            >
                             <ImageButton
-                                Grid.Row="0"
-                                Aspect="AspectFill"
+                                Aspect="AspectFit"
                                 Clicked="OnServiceImagClicked"
                                 HeightRequest="300"
                                 HorizontalOptions="Center"
                                 Source="{Binding Image}"
                                 VerticalOptions="Center" />
                             <Label
-                                Grid.Row="0"
                                 HorizontalOptions="Center"
                                 Text="{Binding Name}"
                                 VerticalOptions="Center" />
                             <Label
-                                Grid.Row="0"
                                 HorizontalOptions="Center"
                                 Text="{Binding Description}"
                                 VerticalOptions="Center" />
                             <Label
-                                Grid.Row="0"
                                 HorizontalOptions="Center"
                                 Text="{Binding Price}"
                                 VerticalOptions="Center" />
 
-                        </Grid>
+                        </VerticalStackLayout>
 
+                        </Frame>
+
+                        </VerticalStackLayout>
 
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

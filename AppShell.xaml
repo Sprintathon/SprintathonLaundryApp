@@ -7,24 +7,21 @@
     Shell.FlyoutBehavior="Disabled">
 
     <TabBar Route="Home">
-        <!--Must inlcude services view-->
-
+        <Tab  Icon="services" Title="Services">
+            <ShellContent ContentTemplate="{DataTemplate local:ServiceView}"/>
+        </Tab>
         <Tab  Icon="orders" Title="Orders">
             <ShellContent ContentTemplate="{DataTemplate local:OrderHistoryView}"/>
-            
         </Tab>
         
         <Tab Icon="settings" Title="Settings">
             <ShellContent  ContentTemplate="{DataTemplate local:SettingsView}"/>
-            
         </Tab>
-        <Tab Icon="settings" Title="Services">
-            <ShellContent  ContentTemplate="{DataTemplate local:ServiceView}"/>
-
+        <Tab Icon="support" Title="About">
+            <ShellContent  ContentTemplate="{DataTemplate local:AboutView}"/>
         </Tab>
+      
     </TabBar>
-
-    
     
     <ShellContent
         Title="Welcome"

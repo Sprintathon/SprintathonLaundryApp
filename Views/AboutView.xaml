@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SprintathonLaundryApp.Views.AboutView"
+             Title="About">
+       <ScrollView>
+            <VerticalStackLayout Padding="20">
+                <Label Text=" Sprintathon: A Software Development Marathon"
+                       FontSize="Large"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
+                <Label Text="This app was created by the participants of Sprintathon: A Software Development Marathon, a three-day event that took place from 29th to 31st May 2023 at the American Corner of the Copperbelt University (CBU). The purpose of this event was to provide an opportunity for the CBU students to learn and practice the latest technologies for creating cross-platform applications using .NET and C#. The students worked in teams to develop an app for laundry services, which consisted of three sub-projects: a mobile app for customers, a web app for management, and a web API for backend. The students used MAUI, Blazor, and ASP.NET as the main technologies for the app development."
+                       FontSize="Medium"/>
+                <Label Text="We would like to thank the following people for attending and organizing the event:"
+                       FontSize="Medium"
+                       FontAttributes="Bold"/>
+                <ListView ItemsSource="{Binding Attendees}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid ColumnDefinitions="3*, 3*, *, *, 3*">
+                                    <Label Text="{Binding FirstName}"
+                                           FontSize="Small"/>
+                                    <Label Grid.Column="1" Text="{Binding LastName}"
+                                           FontSize="Small"/>
+                                    <Label Grid.Column="2" Text="{Binding Program}"
+                                           FontSize="Small"/>
+                                    <Label  Grid.Column="3" Text="{Binding Year}"
+                                           FontSize="Small"/>
+                                    <Label  Grid.Column="4" Text="{Binding Role}"
+                                           FontSize="Small"
+                                           TextColor="Red"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Text="We would also like to thank the following sponsors for supporting the event:"
+                       FontSize="Medium"
+                       FontAttributes="Bold"/>
+                <ListView ItemsSource="{Binding Sponsors}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Logo}"
+                                           WidthRequest="50"
+                                           HeightRequest="50"/>
+                                    <Label Text="{Binding Name}"
+                                           FontSize="Small"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </VerticalStackLayout>
+        </ScrollView>
+</ContentPage>
